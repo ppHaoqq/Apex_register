@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+一覧
+{% endblock title %}
+
+{% block content %}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">ID</th>
+      <th scope="col">使用キャラ</th>
+      <th scope="col">ダメージ</th>
+      <th scope="col">順位</th>
+      <th scope="col">日付</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in object_list %}
+    <tr>
+      <th scope="row">{{ item.pk }}</th>
+      <td>{{ item.character}}</td>
+      <td>{{ item.dmg }}</td>
+      <td>{{ item.rank }}</td>
+        <td>{{ item.date }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
