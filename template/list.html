@@ -20,12 +20,13 @@
   {% for item in object_list %}
     <tr>
       <th scope="row">{{ item.pk }}</th>
-      <td>{{ item.character}}</td>
+      <td><a href="{% url 'detail' item.pk %}">{{ item.character }}</a></td>
       <td>{{ item.dmg }}</td>
       <td>{{ item.rank }}</td>
         <td>{{ item.date }}</td>
     </tr>
   {% endfor %}
+  <a href="{% url 'create' %}"><button type="button" class="btn btn-primary">新規登録</button></a>
   </tbody>
 </table>
 {% endblock content %}
